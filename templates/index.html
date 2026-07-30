@@ -3,21 +3,17 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Infinity Floors – Напольные покрытия, ламинат, паркет и обои в Астане
-    </title>
-
-
-    <!-- CSS Flask -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>
+Infinity Floors – Напольные покрытия, ламинат и обои в Астане
+</title>
 
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 </head>
 
@@ -27,7 +23,7 @@
 
 <header class="header">
 
-    <h1>INFINITY FLOORS</h1>
+<h1>INFINITY FLOORS</h1>
 
 </header>
 
@@ -37,46 +33,52 @@
 
 
 
-    <div class="contacts">
+<!-- КОНТАКТЫ -->
 
-    <h3>Связаться с нами</h3>
+<div class="contacts">
 
-    <div class="contact-buttons">
+<h3>Связаться с нами</h3>
 
-        <a class="instagram"
-           href="https://www.instagram.com/oboi_laminat_astana"
-           target="_blank">
 
-            📷 Instagram
+<div class="contact-buttons">
 
-        </a>
 
-        <a class="whatsapp"
-           href="https://wa.me/77710506090"
-           target="_blank">
+<a class="instagram"
+href="https://www.instagram.com/oboi_laminat_astana"
+target="_blank">
 
-            💬 WhatsApp
+📷 Instagram
 
-        </a>
+</a>
 
-        <a class="gis"
-           href="https://2gis.kz/astana/firm/70000001042366988"
-           target="_blank">
 
-            📍 2GIS
+<a class="whatsapp"
+href="https://wa.me/77710506090"
+target="_blank">
 
-        </a>
+💬 WhatsApp
 
-    </div>
+</a>
+
+
+<a class="gis"
+href="https://2gis.kz/astana/firm/70000001042366988"
+target="_blank">
+
+📍 2GIS
+
+</a>
+
+
+</div>
 
 </div>
 
 
-</div>
 
 
 
-
+<!-- ГЛАВНЫЙ ТЕКСТ -->
 
 <section class="hero-section">
 
@@ -88,9 +90,9 @@
 
 <p>
 
-Широкий выбор ламината, SPC-покрытий и стильных обоев 
-от проверенных производителей. 
-Мы помогаем подобрать материалы под любой интерьер и бюджет.
+Широкий выбор ламината, SPC-покрытий и стильных обоев
+от проверенных производителей.
+Помогаем подобрать материалы под любой интерьер и бюджет.
 
 </p>
 
@@ -102,7 +104,13 @@
 
 
 
+
+<!-- ЛАМИНАТ -->
+
 <section class="block-section">
+
+
+<div class="section-title">
 
 
 <h2>
@@ -110,70 +118,52 @@
 </h2>
 
 
-<p class="desc">
-
+<p>
 Современный дизайн, высокая прочность и долгий срок службы.
-
+Большой выбор цветов и фактур для любого интерьера.
 </p>
 
 
-
-
-<div class="cards-grid grid-3">
-
-
-
-<div class="card">
-
-<img src="{{ url_for('static', filename='img/14.jpg') }}"
-alt="Ламинат">
-
 </div>
 
 
 
+<div class="cards-grid">
+
+
 
 <div class="card">
-
-<img src="{{ url_for('static', filename='img/13.jpg') }}"
-alt="Ламинат">
-
+<img src="{{ url_for('static', filename='img/14.jpg') }}">
 </div>
 
 
-
-
-
 <div class="card">
-
-<img src="{{ url_for('static', filename='img/12.jpg') }}"
-alt="Ламинат">
-
+<img src="{{ url_for('static', filename='img/13.jpg') }}">
 </div>
 
 
-
-
 <div class="card">
-
-<img src="{{ url_for('static', filename='img/11.jpg') }}"
-alt="Ламинат">
-
+<img src="{{ url_for('static', filename='img/12.jpg') }}">
 </div>
 
-<div class="card">
-<img src="{{ url_for('static', filename='img/003.jpg') }}"
-alt="Ламинат">
-</div>
 
 <div class="card">
-<img src="{{ url_for('static', filename='img/005.jpg') }}"
-alt="Ламинат">
+<img src="{{ url_for('static', filename='img/11.jpg') }}">
 </div>
 
+
 <div class="card">
-<img src="{{ url_for('static', filename='img/008.jpg') }}"
-alt="Ламинат">
+<img src="{{ url_for('static', filename='img/003.jpg') }}">
+</div>
+
+
+<div class="card">
+<img src="{{ url_for('static', filename='img/005.jpg') }}">
+</div>
+
+
+<div class="card">
+<img src="{{ url_for('static', filename='img/008.jpg') }}">
 </div>
 
 
@@ -188,7 +178,15 @@ alt="Ламинат">
 
 
 
+
+<!-- ОБОИ -->
+
+
 <section class="block-section">
+
+
+
+<div class="section-title">
 
 
 <h2>
@@ -196,72 +194,62 @@ alt="Ламинат">
 </h2>
 
 
-<p class="desc">
+<p>
 
-Большой выбор современных дизайнов, приятные цены 
-и помощь в подборе идеального варианта.
+Большой выбор современных дизайнов,
+приятные цены и помощь в подборе идеального варианта.
 
 </p>
 
 
+</div>
 
-<div class="cards-grid grid-2">
+
+
+
+
+<div class="cards-grid">
+
+
 
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/001.jpg') }}">
-
 </div>
 
-<div class="card">
 
+<div class="card">
 <img src="{{ url_for('static', filename='img/002.jpg') }}">
-
 </div>
 
 
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/09.jpg') }}">
-
 </div>
 
 
-
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/08.jpg') }}">
-
 </div>
 
 
-
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/07.jpg') }}">
-
 </div>
 
 
-
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/06.jpg') }}">
-
 </div>
 
-<div class="card">
 
+<div class="card">
 <img src="{{ url_for('static', filename='img/05.jpg') }}">
-
 </div>
+
 
 <div class="card">
-
 <img src="{{ url_for('static', filename='img/04.jpg') }}">
-
 </div>
-
 
 
 </div>
@@ -274,7 +262,10 @@ alt="Ламинат">
 
 
 
+
+
 <!-- РЕЙТИНГ -->
+
 
 <section class="rating">
 

@@ -1,40 +1,68 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
+
 
 body {
-    background-color: #E8E8E8;
-    color: #000000;
+
+    background:#E8E8E8;
+
+    color:#111;
+
 }
+
+
+/* ===== HEADER ===== */
+
 
 .header {
-    background-color: #BDBDBD;
-    text-align: center;
-    padding: 25px 10px;
+
+    background:#BDBDBD;
+
+    text-align:center;
+
+    padding:30px 10px;
+
 }
+
 
 .header h1 {
-    font-size: 36px;
-    font-weight: normal;
-    letter-spacing: 2px;
+
+    font-size:38px;
+
+    letter-spacing:3px;
+
+    font-weight:500;
+
 }
+
+
+
+
+/* ===== CONTAINER ===== */
+
 
 .container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px 20px 80px 20px;
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:20px;
+
 }
 
 
 
-/* =======================
-      Контакты
-======================= */
 
-.contacts{
+
+/* ===== CONTACTS ===== */
+
+
+.contacts {
 
     display:flex;
 
@@ -44,23 +72,26 @@ body {
 
     gap:25px;
 
-    margin:35px 0 60px;
+    margin:30px 0 60px;
 
-    transition:.45s;
+    transition:.4s;
 
-    z-index:9999;
+    z-index:1000;
 
 }
 
-.contacts h3{
+
+
+.contacts h3 {
 
     font-size:24px;
 
-    color:#222;
-
 }
 
-.contact-buttons{
+
+
+
+.contact-buttons {
 
     display:flex;
 
@@ -68,13 +99,15 @@ body {
 
 }
 
-.contact-buttons a{
 
-    text-decoration:none;
+
+.contact-buttons a {
 
     color:white;
 
-    padding:14px 24px;
+    text-decoration:none;
+
+    padding:14px 25px;
 
     border-radius:40px;
 
@@ -82,42 +115,51 @@ body {
 
     transition:.3s;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.18);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
 
 }
 
-.instagram{
+
+
+.instagram {
 
     background:linear-gradient(45deg,#feda75,#d62976,#962fbf);
 
 }
 
-.whatsapp{
+
+
+.whatsapp {
 
     background:#25D366;
 
 }
 
-.gis{
 
-    background:#2F80ED;
 
-}
+.gis {
 
-.contact-buttons a:hover{
-
-    transform:translateY(-4px) scale(1.05);
-
-    box-shadow:0 12px 30px rgba(0,0,0,.28);
+    background:#1976d2;
 
 }
 
 
-/* =======================
-    После прокрутки
-======================= */
 
-.contacts.fixed{
+.contact-buttons a:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+/* ПЛАВАЮЩИЕ КОНТАКТЫ */
+
+
+.contacts.fixed {
+
 
     position:fixed;
 
@@ -127,47 +169,35 @@ body {
 
     transform:translateY(-50%);
 
-    display:flex;
 
     flex-direction:column;
 
-    align-items:center;
 
-    gap:18px;
+    background:white;
 
-    background:rgba(255,255,255,.96);
-
-    backdrop-filter:blur(10px);
 
     padding:20px;
 
-    border-radius:22px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.22);
+    border-radius:25px;
 
-}
 
-.contacts.fixed h3{
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 
-    margin-bottom:8px;
-
-    text-align:center;
-
-    font-size:22px;
 
 }
 
-.contacts.fixed .contact-buttons{
 
-    display:flex;
+.contacts.fixed .contact-buttons {
 
     flex-direction:column;
 
-    gap:12px;
-
 }
 
-.contacts.fixed .contact-buttons a{
+
+
+
+.contacts.fixed .contact-buttons a {
 
     width:180px;
 
@@ -175,109 +205,223 @@ body {
 
 }
 
+
+
+
+
+
+/* ===== HERO ===== */
+
+
 .hero-section {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 50px auto;
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 70px;
+
 }
+
+
 
 .hero-section h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 25px;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
 }
+
+
 
 .hero-section p {
-    font-size: 15px;
-    line-height: 1.4;
-    color: #333333;
+
+    color:#444;
+
+    line-height:1.6;
+
 }
+
+
+
+
+
+
+
+/* ===== BLOCKS ===== */
+
 
 .block-section {
-    margin-bottom: 50px;
+
+    margin-bottom:80px;
+
 }
 
-.block-section h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
+
+
+.section-title {
+
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+
 }
 
-.block-section .desc {
-    font-size: 14px;
-    line-height: 1.4;
-    color: #333333;
-    max-width: 550px;
-    margin-bottom: 30px;
+
+
+.section-title h2 {
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
 }
+
+
+
+.section-title p {
+
+
+    max-width:600px;
+
+    margin:auto;
+
+    color:#555;
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+
+
+/* ===== CARDS ===== */
+
 
 .cards-grid {
-    display: grid;
-    gap: 25px;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,250px);
+
+
+    justify-content:center;
+
+
+    gap:30px;
+
+
 }
 
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
 
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
+
 
 .card {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 25px;
-    overflow: hidden;
-    background-color: #ccc;
-    transition: box-shadow 0.3s ease;
+
+
+    width:250px;
+
+
+    height:250px;
+
+
+    border-radius:25px;
+
+
+    overflow:hidden;
+
+
+    background:#ccc;
+
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+
+    transition:.35s;
+
+
 }
+
+
+
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    transition:.35s;
+
+
 }
+
+
+
 
 .card:hover {
-    box-shadow: 0 15px 34px rgba(0, 0, 0, 1);
+
+
+    transform:translateY(-8px);
+
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+
 }
+
+
+
 
 .card:hover img {
-    transform: scale(1.08);
-    cursor: pointer;
+
+
+    transform:scale(1.08);
+
+
 }
 
 
-/* Мобильная адаптивность */
-@media (max-width: 650px) {
-    .grid-3, .grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    .card {
-        border-radius: 15px;
-    }
-}
-/* ===== Рейтинг ===== */
+
+
+
+
+
+/* ===== RATING ===== */
+
 
 .rating {
 
-    margin-top: 100px;
-    padding: 60px 20px;
 
-    text-align: center;
+    margin-top:100px;
 
-    background: linear-gradient(
-        to bottom,
-        #eeeeee,
-        #ffffff
-    );
 
-    border-top: 2px solid #ddd;
+    padding:60px 20px;
+
+
+    text-align:center;
+
+
+    background:linear-gradient(#eeeeee,#ffffff);
+
+
+    border-top:2px solid #ddd;
+
 
 }
 
@@ -285,11 +429,12 @@ body {
 
 .rating h2 {
 
-    font-size: 32px;
 
-    margin-bottom: 25px;
+    font-size:32px;
 
-    color: #222;
+
+    margin-bottom:25px;
+
 
 }
 
@@ -297,13 +442,18 @@ body {
 
 .stars {
 
-    display: flex;
 
-    justify-content: center;
+    display:flex;
 
-    gap: 10px;
 
-    margin: 20px 0;
+    justify-content:center;
+
+
+    gap:10px;
+
+
+    margin:20px;
+
 
 }
 
@@ -311,62 +461,138 @@ body {
 
 .stars span {
 
-    font-size: 60px;
 
-    color: #bdbdbd;
+    font-size:60px;
 
-    cursor: pointer;
 
-    transition: 
-        transform 0.25s ease,
-        color 0.25s ease,
-        text-shadow 0.25s ease;
+    color:#bbb;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
 
 
 }
 
 
 
-/* когда наводишь */
+.stars span:hover,
 
-.stars span:hover {
-
-    transform: scale(1.25);
-
-    color: gold;
-
-    text-shadow:
-        0 0 10px gold,
-        0 0 20px orange,
-        0 0 30px gold;
-
-}
-
-
-
-/* активные звезды */
 
 .stars span.active {
 
-    color: gold;
+
+    color:gold;
+
+
+    transform:scale(1.25);
+
 
     text-shadow:
-        0 0 10px gold,
-        0 0 20px orange;
+
+    0 0 10px gold,
+
+    0 0 25px orange;
+
 
 }
-
 
 
 
 .rating p {
 
-    font-size: 20px;
 
-    color: #555;
+    font-size:20px;
 
-    margin: 10px;
+    margin:10px;
+
+    color:#555;
 
 }
 
 
+
+
+
+
+
+/* ===== MOBILE ===== */
+
+
+@media(max-width:850px){
+
+
+.cards-grid {
+
+
+    grid-template-columns:repeat(2,250px);
+
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.header h1 {
+
+    font-size:28px;
+
+}
+
+
+
+.contacts {
+
+    flex-direction:column;
+
+}
+
+
+
+.cards-grid {
+
+
+    grid-template-columns:250px;
+
+
+}
+
+
+
+.card {
+
+    width:250px;
+
+    height:250px;
+
+}
+
+
+
+.contacts.fixed {
+
+
+    left:10px;
+
+}
+
+
+
+.contacts.fixed .contact-buttons a {
+
+
+    width:150px;
+
+}
+
+
+
+}
