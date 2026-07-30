@@ -538,6 +538,9 @@ body {
 
 
 
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+
 @media(max-width:600px){
 
 
@@ -549,47 +552,191 @@ body {
 
 
 
+.container {
+
+    padding:15px;
+
+}
+
+
+
+
+/* Контакты */
+
 .contacts {
 
     flex-direction:column;
 
-}
+    gap:15px;
 
-
-
-.cards-grid {
-
-
-    grid-template-columns:250px;
-
+    margin-bottom:40px;
 
 }
 
 
 
-.card {
+.contacts h3 {
 
-    width:250px;
-
-    height:250px;
+    font-size:20px;
 
 }
 
+
+
+.contact-buttons {
+
+    width:100%;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+
+
+.contact-buttons a {
+
+    padding:10px 12px;
+
+    font-size:13px;
+
+    border-radius:25px;
+
+}
+
+
+
+
+
+/* ОТКЛЮЧАЕМ ПЛАВАЮЩИЕ КНОПКИ НА ТЕЛЕФОНЕ */
 
 
 .contacts.fixed {
 
+    position:static;
 
-    left:10px;
+    transform:none;
+
+    flex-direction:column;
+
+    background:none;
+
+    padding:0;
+
+    box-shadow:none;
 
 }
+
+
+
+
+.contacts.fixed .contact-buttons {
+
+    flex-direction:row;
+
+}
+
+
 
 
 
 .contacts.fixed .contact-buttons a {
 
+    width:auto;
 
-    width:150px;
+}
+
+
+
+
+
+
+
+/* Тексты */
+
+
+.hero-section h2 {
+
+    font-size:22px;
+
+}
+
+
+.section-title h2 {
+
+    font-size:22px;
+
+}
+
+
+
+.section-title p {
+
+    font-size:14px;
+
+}
+
+
+
+
+
+
+
+/* КАРТИНКИ 2 В РЯД */
+
+
+.cards-grid {
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.card {
+
+
+    width:100%;
+
+
+    height:auto;
+
+
+    aspect-ratio:1/1;
+
+
+    border-radius:18px;
+
+
+}
+
+
+
+
+
+
+/* Рейтинг */
+
+
+.rating h2 {
+
+    font-size:26px;
+
+}
+
+
+
+.stars span {
+
+    font-size:45px;
 
 }
 
