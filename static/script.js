@@ -90,12 +90,7 @@ stars.forEach(star => {
 
     });
 
-
-});
-
-
-
-// убрать подсветку
+    // убрать подсветку
 document.querySelector(".stars").addEventListener("mouseout", function(){
 
 
@@ -104,6 +99,32 @@ document.querySelector(".stars").addEventListener("mouseout", function(){
         star.classList.remove("active");
 
     });
+
+
+});
+
+
+const contacts = document.querySelector(".contacts");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 250){
+
+        contacts.classList.add("fixed");
+
+    }else{
+
+        contacts.classList.remove("fixed");
+
+    }
+
+});
+
+
+
+
+
+
 
 
 });
