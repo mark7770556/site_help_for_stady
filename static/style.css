@@ -131,6 +131,111 @@ body {
         border-radius: 15px;
     }
 }
+/* ===== Рейтинг ===== */
 
+.rating {
+
+    margin-top: 100px;
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        #eeeeee,
+        #ffffff
+    );
+
+    border-top: 2px solid #ddd;
+
+}
+
+
+
+.rating h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    color: #222;
+
+}
+
+
+
+.stars {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+}
+
+
+
+.stars span {
+
+    font-size: 60px;
+
+    color: #bdbdbd;
+
+    cursor: pointer;
+
+    transition: 
+        transform 0.25s ease,
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+
+
+}
+
+
+
+/* когда наводишь */
+
+.stars span:hover {
+
+    transform: scale(1.25);
+
+    color: gold;
+
+    text-shadow:
+        0 0 10px gold,
+        0 0 20px orange,
+        0 0 30px gold;
+
+}
+
+
+
+/* активные звезды */
+
+.stars span.active {
+
+    color: gold;
+
+    text-shadow:
+        0 0 10px gold,
+        0 0 20px orange;
+
+}
+
+
+
+
+.rating p {
+
+    font-size: 20px;
+
+    color: #555;
+
+    margin: 10px;
+
+}
 
 

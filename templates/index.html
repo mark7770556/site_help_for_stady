@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Infinity Floors – Напольные покрытия, ламинат, паркет и обои в Астане
+    </title>
+
+
+    <!-- CSS Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <h1>INFINITY FLOORS</h1>
+
+</header>
+
+
+
+<div class="container">
+
+
+
+    <div class="contacts">
+
+        <span>Контакты:</span>
+
+        <a href="https://www.instagram.com/oboi_laminat_astana">
+            Instagram
+        </a>
+
+
+        <a href="https://wa.me/77710506090">
+            WhatsApp
+        </a>
+
+
+        <a href="https://2gis.kz/astana/firm/70000001042366988">
+            2GIS
+        </a>
+
+
+    </div>
+
+
+
+
+
+<section class="hero-section">
+
+
+<h2>
+Создаем интерьер, который вдохновляет
+</h2>
+
+
+<p>
+
+Широкий выбор ламината, SPC-покрытий и стильных обоев 
+от проверенных производителей. 
+Мы помогаем подобрать материалы под любой интерьер и бюджет.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section class="block-section">
+
+
+<h2>
+Качественный ламинат для вашего дома
+</h2>
+
+
+<p class="desc">
+
+Современный дизайн, высокая прочность и долгий срок службы.
+
+</p>
+
+
+
+
+<div class="cards-grid grid-3">
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/14.jpg') }}"
+alt="Ламинат">
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/13.jpg') }}"
+alt="Ламинат">
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/12.jpg') }}"
+alt="Ламинат">
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/11.jpg') }}"
+alt="Ламинат">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="block-section">
+
+
+<h2>
+Стильные обои для любого интерьера
+</h2>
+
+
+<p class="desc">
+
+Большой выбор современных дизайнов, приятные цены 
+и помощь в подборе идеального варианта.
+
+</p>
+
+
+
+<div class="cards-grid grid-2">
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/09.jpg') }}">
+
+</div>
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/08.jpg') }}">
+
+</div>
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/07.jpg') }}">
+
+</div>
+
+
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/06.jpg') }}">
+
+</div>
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/05.jpg') }}">
+
+</div>
+
+<div class="card">
+
+<img src="{{ url_for('static', filename='img/04.jpg') }}">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- РЕЙТИНГ -->
+
+<section class="rating">
+
+
+<h2>
+Оцените наш сайт
+</h2>
+
+
+
+<div class="stars">
+
+
+<span data-value="1">★</span>
+
+<span data-value="2">★</span>
+
+<span data-value="3">★</span>
+
+<span data-value="4">★</span>
+
+<span data-value="5">★</span>
+
+
+</div>
+
+
+
+
+<p>
+Средний рейтинг:
+<strong>{{ average }}</strong> ⭐
+</p>
+
+
+
+<p>
+Количество оценок:
+<strong>{{ count }}</strong>
+</p>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+
+</html>
