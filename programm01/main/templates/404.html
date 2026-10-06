@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Страница не найдена</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .error {
+            text-align: center;
+            background: white;
+            padding: 50px 70px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .error h1 {
+            margin: 0;
+            font-size: 90px;
+            color: #222;
+        }
+
+        .error h2 {
+            margin: 10px 0;
+            font-size: 28px;
+        }
+
+        .error p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .error a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        .error a:hover {
+            background: #444;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="error">
+        <h1>404</h1>
+        <h2>Страница не найдена</h2>
+        <p>Похоже, такой страницы не существует.</p>
+
+        <a href="{% url 'home' %}">
+            Вернуться на главную
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

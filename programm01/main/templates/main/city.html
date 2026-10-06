@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Учебные заведения</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f5;
+            color: #222;
+            overflow: hidden;
+        }
+
+        /* ================= PAGE ================= */
+
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ================= HEADER ================= */
+
+        .header {
+            height: 80px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            margin-left: auto;
+        }
+
+        .back-button:hover {
+            background: #eeeeee;
+        }
+
+        /* ================= MAIN ================= */
+
+        .main {
+            flex: 1;
+            display: flex;
+            min-height: 0;
+        }
+
+        /* ================= LEFT ================= */
+
+        .left-side {
+            width: 50%;
+            height: 100%;
+            padding: 55px;
+            overflow-y: auto;
+            border-right: 1px solid #dddddd;
+        }
+
+        /* ================= RIGHT ================= */
+
+        .right-side {
+            width: 50%;
+            height: 100%;
+            padding: 55px;
+            overflow: hidden;
+        }
+
+        /* ================= TITLES ================= */
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        /* ================= INSTITUTIONS ================= */
+
+        .institution-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 600px;
+        }
+
+        .institution-button {
+            display: block;
+            width: 100%;
+            padding: 20px 24px;
+            background: #e7e7e7;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .institution-button:hover {
+            background: #d5d5d5;
+            transform: translateX(4px);
+        }
+
+        /* Если заведений нет */
+
+        .empty-message {
+            color: #777;
+            font-size: 16px;
+            padding: 20px;
+            background: #eeeeee;
+            border-radius: 12px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-block {
+            max-width: 650px;
+        }
+
+        .search-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .search-description {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        /* ================= FIELDS ================= */
+
+        .field {
+            margin-bottom: 25px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .field input {
+            width: 100%;
+            height: 55px;
+            border: 1px solid #d6d6d6;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 16px 18px;
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+
+            transition:
+                border 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .field input:focus {
+            border-color: #999;
+
+            box-shadow:
+                0 0 0 3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ================= TYPE BUTTONS ================= */
+
+        .type-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .type-button {
+            border: 1px solid #d6d6d6;
+            background: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 16px;
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border 0.2s ease;
+        }
+
+        .type-button:hover {
+            background: #eeeeee;
+            border-color: #bbbbbb;
+        }
+
+        /* ================= SEARCH BUTTON ================= */
+
+        .search-button {
+            width: 100%;
+            height: 55px;
+            border: none;
+            border-radius: 10px;
+            background: #333;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease;
+        }
+
+        .search-button:hover {
+            background: #222;
+        }
+
+        /* ================= RESET BUTTON ================= */
+
+        .reset-button {
+            display: block;
+            width: 100%;
+            height: 55px;
+            margin-top: 12px;
+
+            border: 1px solid #d6d6d6;
+            border-radius: 10px;
+
+            background: #ffffff;
+            color: #333;
+
+            text-decoration: none;
+            font-size: 17px;
+            text-align: center;
+            line-height: 55px;
+
+            transition:
+                background 0.2s ease,
+                border 0.2s ease;
+        }
+
+        .reset-button:hover {
+            background: #eeeeee;
+            border-color: #bbbbbb;
+        }
+
+        /* ================= MOBILE SEARCH TOGGLE ================= */
+
+        .mobile-search-button {
+            display: none;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            body {
+                overflow: auto;
+            }
+
+            .page {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .main {
+                flex-direction: column;
+            }
+
+            .left-side,
+            .right-side {
+                width: 100%;
+                height: auto;
+                padding: 35px 25px;
+            }
+
+            .left-side {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .right-side {
+                overflow: visible;
+            }
+
+            .header {
+                height: 70px;
+                padding: 0 25px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            /* Кнопка открытия поиска */
+
+            .mobile-search-button {
+                display: block;
+                width: 100%;
+                height: 55px;
+
+                border: 1px solid #d6d6d6;
+                border-radius: 10px;
+
+                background: white;
+                color: #333;
+
+                font-size: 17px;
+                cursor: pointer;
+
+                margin-bottom: 20px;
+            }
+
+            .mobile-search-button:hover {
+                background: #eeeeee;
+            }
+
+            /* Поиск изначально скрыт */
+
+            .search-block {
+                display: none;
+            }
+
+            /* Когда открыли */
+
+            .search-block.active {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Инфраструктура
+        </div>
+
+        <a
+            href="javascript:history.back()"
+            class="back-button"
+        >
+            ← Назад
+        </a>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="left-side">
+
+            <h1 class="section-title">
+                Учебные заведения
+            </h1>
+
+            <p class="section-description">
+            </p>
+
+
+            <div class="institution-list">
+
+                {% for institution in institutions %}
+
+                    <a
+                        href="{% url 'institution_detail' institution.id %}"
+                        class="institution-button"
+                    >
+                        {{ institution.name }}
+                    </a>
+
+                {% empty %}
+
+                    <div class="empty-message">
+                        В этом городе пока нет учебных заведений.
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="right-side">
+
+
+            <!-- КНОПКА ТОЛЬКО ДЛЯ ТЕЛЕФОНА -->
+
+            <button
+                class="mobile-search-button"
+                onclick="toggleSearch()"
+            >
+                Найти заведение
+            </button>
+
+
+            <div class="search-block" id="searchBlock">
+
+                <h2 class="search-title">
+                    Найти заведение
+                </h2>
+
+                <p class="search-description">
+                    Найдите учебное заведение по названию
+                    или выберите его тип.
+                </p>
+
+
+                <!-- ================= SEARCH FORM ================= -->
+
+                <form method="GET">
+
+
+                    <!-- ПОИСК ПО НАЗВАНИЮ -->
+
+                    <div class="field">
+
+                        <label for="search">
+                            Поиск по названию
+                        </label>
+
+                        <input
+                            type="text"
+                            id="search"
+                            name="search"
+                            placeholder="Например: Astana IT University"
+                            value="{{ search }}"
+                        >
+
+                    </div>
+
+
+                    <!-- ================= ТИП ================= -->
+
+                    <div class="field">
+
+                        <label>
+                            Тип учебного заведения
+                        </label>
+
+                        <div class="type-buttons">
+
+                            <button
+                                type="submit"
+                                name="type"
+                                value="Университет"
+                                class="type-button"
+                            >
+                                Университет
+                            </button>
+
+                            <button
+                                type="submit"
+                                name="type"
+                                value="Колледж"
+                                class="type-button"
+                            >
+                                Колледж
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SEARCH ================= -->
+
+                    <button
+                        type="submit"
+                        class="search-button"
+                    >
+                        Найти заведение
+                    </button>
+
+                </form>
+
+
+                <!-- ================= RESET ================= -->
+
+                <a
+                    href="/city/{{ request.resolver_match.kwargs.city_id }}/"
+                    class="reset-button"
+                >
+                    Показать все заведения
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= MOBILE SEARCH SCRIPT ================= -->
+
+<script>
+
+    function toggleSearch() {
+
+        const searchBlock = document.getElementById("searchBlock");
+
+        searchBlock.classList.toggle("active");
+
+    }
+
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,527 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Выбор города</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #1f2d3d;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           ШАПКА
+        ========================= */
+
+        header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            font-size: 25px;
+        }
+
+        .slogan {
+            color: #7c8796;
+            font-size: 15px;
+        }
+
+        /* =========================
+           ОСНОВНАЯ ЧАСТЬ
+        ========================= */
+
+        main {
+            min-height: calc(100vh - 70px);
+
+            margin-top: 70px;
+
+            padding-left: 7%;
+            padding-right: 57%;
+        }
+
+        /* =========================
+           ЛЕВАЯ ЧАСТЬ
+        ========================= */
+
+        .left-side {
+            width: 100%;
+
+            padding-top: 55px;
+            padding-bottom: 50px;
+            padding-right: 50px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+
+            color: #17283d;
+        }
+
+        /* =========================
+           ПОИСК
+        ========================= */
+
+        .search-box {
+            width: 100%;
+            height: 52px;
+
+            margin-bottom: 15px;
+        }
+
+        .search-box form {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+
+            border: 1px solid #d5dbe2;
+            border-radius: 10px;
+
+            background: white;
+            overflow: hidden;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .search-box form:focus-within {
+            border-color: #aeb7c2;
+
+            box-shadow:
+                0 0 0 3px rgba(36, 54, 75, 0.05);
+        }
+
+        .search-box input {
+            flex: 1;
+
+            height: 100%;
+
+            border: none;
+            outline: none;
+
+            padding: 0 16px;
+
+            font-size: 16px;
+
+            color: #27384d;
+            background: transparent;
+        }
+
+        .search-box input::placeholder {
+            color: #8c98a7;
+        }
+
+        .search-box button {
+            height: 100%;
+
+            padding: 0 22px;
+
+            border: none;
+
+            background: #24364b;
+            color: white;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: background 0.2s ease;
+        }
+
+        .search-box button:hover {
+            background: #17283d;
+        }
+
+        /* =========================
+           СБРОС ПОИСКА
+        ========================= */
+
+        .reset-search {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            color: #65778c;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: color 0.2s ease;
+        }
+
+        .reset-search:hover {
+            color: #17283d;
+        }
+
+        /* =========================
+           ГОРОДА
+        ========================= */
+
+        .cities {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .city-card {
+            width: 100%;
+            min-height: 52px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 18px;
+
+            background: #eef0f2;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: #24364b;
+
+            font-size: 17px;
+
+            transition:
+                background 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .city-card:hover {
+            background: #e1e4e7;
+
+            box-shadow:
+                0 8px 18px rgba(40, 55, 70, 0.12);
+
+            transform: translateY(-1px);
+        }
+
+        .city-icon {
+            margin-right: 15px;
+
+            font-size: 20px;
+
+            color: #65778c;
+        }
+
+        /* =========================
+           ЕСЛИ ГОРОДОВ НЕТ
+        ========================= */
+
+        .no-results {
+            padding: 18px;
+
+            background: #f1f2f3;
+
+            border-radius: 10px;
+
+            color: #65778c;
+
+            font-size: 16px;
+        }
+
+        /* =========================
+           ПРАВАЯ КАРТИНКА
+        ========================= */
+
+        .right-side {
+            position: fixed;
+
+            top: 70px;
+            right: 0;
+
+            width: 57%;
+            height: calc(100vh - 70px);
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+        .mountain-image {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        /* Плавный переход картинки в белый */
+
+        .right-side::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 35%;
+            height: 100%;
+
+            z-index: 2;
+
+            background: linear-gradient(
+                to right,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0.95) 20%,
+                rgba(255, 255, 255, 0.65) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+
+        /* =========================
+           ПЛАНШЕТ / ТЕЛЕФОН
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 5%;
+            }
+
+            .slogan {
+                display: none;
+            }
+
+            main {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .left-side {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .right-side {
+                display: none;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+        }
+
+        /* =========================
+           МАЛЕНЬКИЙ ТЕЛЕФОН
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            header {
+                height: 60px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            main {
+                margin-top: 60px;
+
+                min-height: calc(100vh - 60px);
+            }
+
+            .left-side {
+                padding-top: 35px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .city-card {
+                min-height: 50px;
+
+                font-size: 16px;
+            }
+
+            .search-box button {
+                padding: 0 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ШАПКА -->
+
+    <header>
+
+        <div class="logo">
+
+            <span class="logo-icon">
+                🎓
+            </span>
+
+            <span>
+                Образование Казахстана
+            </span>
+
+        </div>
+
+        <div class="slogan">
+            Выбирай. Учись. Развивайся.
+        </div>
+
+    </header>
+
+
+    <!-- ОСНОВНАЯ ЧАСТЬ -->
+
+    <main>
+
+        <!-- ЛЕВАЯ ЧАСТЬ -->
+
+        <section class="left-side">
+
+            <h1 class="title">
+                Выберите город
+            </h1>
+
+
+            <!-- ПОИСК -->
+
+            <div class="search-box">
+
+                <form method="GET">
+
+                    <input
+                        type="text"
+                        name="search"
+                        value="{{ search }}"
+                        placeholder="Введите название города..."
+                    >
+
+                    <button type="submit">
+                        Найти
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- СБРОС ПОИСКА -->
+
+            {% if search %}
+
+                <a
+                    href="{% url 'home' %}"
+                    class="reset-search"
+                >
+                    ← Показать все города
+                </a>
+
+            {% endif %}
+
+
+            <!-- ГОРОДА -->
+
+            <div class="cities">
+
+                {% for city in cities %}
+
+                    <a
+                        href="{% url 'city_institution' city.id %}"
+                        class="city-card"
+                    >
+
+                        <span class="city-icon">
+                            📍
+                        </span>
+
+                        <span>
+                            {{ city.name }}
+                        </span>
+
+                    </a>
+
+                {% empty %}
+
+                    <div class="no-results">
+                        Городов по вашему запросу не найдено.
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <!-- ПРАВАЯ ЧАСТЬ -->
+
+        <section class="right-side">
+
+            <img
+                src="{% static 'main/images/mountain.jpg' %}"
+                alt="Путешественник в горах"
+                class="mountain-image"
+            >
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+
+
