@@ -32,6 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "site-help-for-stady.onrender.com",
 ]
 
 
@@ -138,3 +139,12 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://site-help-for-stady.onrender.com",
+]
+
+
+
+
