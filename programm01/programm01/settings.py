@@ -83,15 +83,14 @@ WSGI_APPLICATION = 'programm01.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        "default": dj_database_url.config(
-            default=os.getenv("postgresql://infastructyra_user:Y9EAbJoW3cq8unSDFP5HydCybVbf2Yzp@dpg-db7q0j2j9qps73db97bg-a/infastructyra"),
-            conn_max_age=600,
-            engine="django.db.backends.postgresql",
-        )
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        engine="django.db.backends.postgresql",
+    )
 }
+
 
 
 # Password validation
